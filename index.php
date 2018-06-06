@@ -87,7 +87,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <div class="clearfix"></div>
                 <br />
                 <div>
-                   <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME?> CAD System</h1>
+                   <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME?> Officer Information System</h1>
                    <h2> OpenCAD Version <?php getOpenCADVersion();?> </h2>
                 </div>
              </div>
@@ -102,7 +102,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                         <div class="clearfix"></div>
                         <br />
                         <div>
-                           <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME?> CAD System</h1>
+                           <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME?> Officer Information System</h1>
                         </div>
                      </div>
 					 <?php } ?>
