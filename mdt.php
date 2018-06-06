@@ -88,7 +88,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                                  <a type="button" data-toggle="modal" data-target="#createWarning" > Create Warning</a>
                            </li>
                            <li>
-                                 <a type="button" data-toggle="modal" data-target="#createCitation" > Create Citation</a>
+                                 <a type="button" data-toggle="modal" data-target="#createCitation" > Create Ticket</a>
                            </li>
                            <li>
                                  <a type="button" data-toggle="modal" data-target="#createArrest" > Create Arrest Report</a
@@ -225,13 +225,20 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                                     <label class="col-md-2 col-sm-2 col-xs-2 control-label">Change Status</label>
                                     <div class="col-md-10 col-sm-10 col-xs-10">
                                        <select name="statusSelect" class="form-control selectpicker <?php echo $_SESSION['identifier'];?>" id="statusSelect" onChange="responderChangeStatus(this);" title="Select a Status">
-                                          <option value="10-6">10-6/Busy</option>
-										  <option value="10-5">10-5/Meal Break</option>
-										  <option value="10-7">10-7/Unavailable</option>
-										  <option value="10-8">10-8/Available</option>
-										  <option value="10-23">10-23/Arrived on Scene</option>
-										  <option value="10-65">10-65/Transporting Prisoner</option>
-                                          <option value="sig11">Signal 11</option>
+                                          <option value="1">State 1/On Duty</option>
+										  <option value="2">State 2/Patrol</option>
+										  <option value="3">State 3/At Station</option>
+										  <option value="4">State 4/Refreshments</option>
+										  <option value="5">State 5/En Route to Incident</option>
+										  <option value="6">State 6/At Scene</option>
+										  <option value="7">State 7/Comitted - Deployable</option>
+										  <option value="8">State 8/Committed Undeployable</option>
+										  <option value="9">State 9/Prisoner Transport</option>
+										  <option value="10">State 10/At Court</option>
+										  <option value="11">State 11/Off Duty</option>
+										  <option value="12">State 12/Confidential Message</option>
+										  <option value="13">State 13/Non Urgent Call Back</option>
+										  <option value="14">State 14/Urgent Call Back</option>
                                        </select>
                                     </div>
                                     <!-- ./ col-sm-9 -->
@@ -245,7 +252,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                      <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="x_panel">
                            <div class="x_title">
-                              <h2>My Call</h2>
+                              <h2>Current Incident</h2>
                               <ul class="nav navbar-right panel_toolbox">
                                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                               </ul>
@@ -390,7 +397,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                      <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="x_panel">
                            <div class="x_title">
-                              <h2>NCIC Name Lookup</h2>
+                              <h2>PNC Person Check</h2>
                               <ul class="nav navbar-right panel_toolbox">
                                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                               </ul>
@@ -418,7 +425,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                      <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="x_panel">
                            <div class="x_title">
-                              <h2>NCIC Plate Lookup</h2>
+                              <h2>PNC Vehicle Check</h2>
                               <ul class="nav navbar-right panel_toolbox">
                                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                               </ul>
@@ -446,7 +453,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                      <div class="col-md-4 col-sm-4 col-xs-4">
                         <div class="x_panel">
                            <div class="x_title">
-                              <h2>NCIC Weapon Lookup</h2>
+                              <h2>National Firearms Licensing Managment System</h2>
                               <ul class="nav navbar-right panel_toolbox">
                                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
                               </ul>
@@ -483,7 +490,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
       <!-- footer content -->
       <footer>
          <div class="pull-right">
-            <?php echo COMMUNITY_NAME?> CAD System
+            <?php echo COMMUNITY_NAME?> Officer Information System
          </div>
          <div class="clearfix"></div>
       </footer>
@@ -498,7 +505,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                <div class="modal-header">
                   <button type="button" class="close" id="closeCallsign" data-dismiss="modal"><span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title" id="myModalLabel">Enter Your Callsign for This Patrol</h4>
+                  <h4 class="modal-title" id="myModalLabel">Enter Your Callsign for This Tour of Duty</h4>
                </div>
                <!-- ./ modal-header -->
                <div class="modal-body">
@@ -531,7 +538,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                <div class="modal-header">
                   <button type="button" class="close" id="closeCallsign" data-dismiss="modal"><span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title" id="myModalLabel">Currently Active Vehicle BOLOs</h4>
+                  <h4 class="modal-title" id="myModalLabel">Currently Active Vehicle Observations</h4>
                </div>
                <!-- ./ modal-header -->
                <div class="modal-body">
@@ -556,7 +563,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                <div class="modal-header">
                   <button type="button" class="close" id="closeCallsign" data-dismiss="modal"><span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title" id="myModalLabel">Currently Active Person BOLOs</h4>
+                  <h4 class="modal-title" id="myModalLabel">Currently Active Person Obervations</h4>
                </div>
                <!-- ./ modal-header -->
                <div class="modal-body">
@@ -597,7 +604,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Arrest Reason 1</label>
+                <label class="col-lg-2 control-label">Reason for Arrest</label>
                 <div class="col-lg-10">
 					<input type="text" name="arrest_reason_1" id="arrest_reason_1" size="70" placeholder="Enter a reason for arrest" required />
 					<input type="number" name="arrest_fine_1" id="arrest_fine_1" size="10" placeholder="Enter a fine amount" />
@@ -606,7 +613,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
 			  <p>Optional</p>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Arrest Reason 2</label>
+                <label class="col-lg-2 control-label">Reason for Arrest</label>
                 <div class="col-lg-10">
 					<input type="text" name="arrest_reason_2" id="arrest_reason_2" size="70" placeholder="Enter a reason for arrest"  />
 					<input type="number" name="arrest_fine_2" id="arrest_fine_2" placeholder="Enter a fine amount"  />
@@ -614,7 +621,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Arrest Reason 3</label>
+                <label class="col-lg-2 control-label">Reason for Arrest</label>
                 <div class="col-lg-10">
 					<input type="text" name="arrest_reason_3" id="arrest_reason_3" size="70" placeholder="Enter a reason for arrest"  />
 					<input type="number" name="arrest_fine_3" id="arrest_fine_3" placeholder="Enter a fine amount"  />
@@ -622,7 +629,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Arrest Reason 4</label>
+                <label class="col-lg-2 control-label">Reason for Arrest</label>
                 <div class="col-lg-10">
 					<input type="text" name="arrest_reason_4" id="arrest_reason_4" size="70" placeholder="Enter a reason for arrest"  />
 					<input type="number" name="arrest_fine_4" id="arrest_fine_4" placeholder="Enter a fine amount"  />
@@ -630,7 +637,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Arrest Reason 5</label>
+                <label class="col-lg-2 control-label">Reason for Arrest</label>
                 <div class="col-lg-10">
 					<input type="text" name="arrest_reason_5" id="arrest_reason_5" size="70" placeholder="Enter a reason for arrest"  />
 					<input type="number" name="arrest_fine_5" id="arrest_fine_5" placeholder="Enter a fine amount"  />
@@ -665,7 +672,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" id="citation_panel">
                   <div class="x_title">
-                    <h2>RMS Warnings</h2>
+                    <h2>Intelligence Information System</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -682,7 +689,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 </div>
                 <div class="x_panel" id="citation_panel">
                   <div class="x_title">
-                    <h2>RMS Citations</h2>
+                    <h2>Central Ticket Office</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -699,7 +706,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 </div>
                 <div class="x_panel" id="citation_panel">
                   <div class="x_title">
-                    <h2>RMS Arrests</h2>
+                    <h2>Disposal History</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -716,7 +723,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 </div>
                 <div class="x_panel" id="citation_panel">
                   <div class="x_title">
-                    <h2>RMS Warrants</h2>
+                    <h2>Outstanding Warrants</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -754,7 +761,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
             <div class="modal-header">
                <button type="button" class="close" data-dismiss="modal" id="closecallDetails"><span aria-hidden="true">×</span>
                </button>
-               <h4 class="modal-title" id="myModalLabel">Citation Creation</h4>
+               <h4 class="modal-title" id="myModalLabel">Traffic Offence Report</h4>
             </div>
             <!-- ./ modal-header -->
           <div class="modal-body">
@@ -770,7 +777,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Citation Name 1</label>
+                <label class="col-lg-2 control-label">Traffic Offence</label>
                 <div class="col-lg-10">
 					<input type="text" name="citation_name_1" id="citation_name_1" size="70" placeholder="Enter a citation" required />
 					<input type="number" name="citation_fine_1" id="citation_fine_1" size="10" placeholder="Enter a fine amount" required />
@@ -779,7 +786,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
 			  <p>Optional</p>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Citation Name 2</label>
+                <label class="col-lg-2 control-label">Vehicle Defect Retification Scheme</label>
                 <div class="col-lg-10">
 					<input type="text" name="citation_name_2" id="citation_name_2" size="70" placeholder="Enter a citation"  />
 					<input type="number" name="citation_fine_2" id="citation_fine_2" placeholder="Enter a fine amount"  />
@@ -787,7 +794,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Citation Name 3</label>
+                <label class="col-lg-2 control-label">Other info</label>
                 <div class="col-lg-10">
 					<input type="text" name="citation_name_3" id="citation_name_3" size="70" placeholder="Enter a citation"  />
 					<input type="number" name="citation_fine_3" id="citation_fine_3" placeholder="Enter a fine amount"  />
@@ -795,7 +802,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Citation Name 4</label>
+                <label class="col-lg-2 control-label">Other Info</label>
                 <div class="col-lg-10">
 					<input type="text" name="citation_name_4" id="citation_name_4" size="70" placeholder="Enter a citation"  />
 					<input type="number" name="citation_fine_4" id="citation_fine_4" placeholder="Enter a fine amount"  />
@@ -803,7 +810,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Citation Name 5</label>
+                <label class="col-lg-2 control-label">Remarks</label>
                 <div class="col-lg-10">
 					<input type="text" name="citation_name_5" id="citation_name_5" size="70" placeholder="Enter a citation"  />
 					<input type="number" name="citation_fine_5" id="citation_fine_5" placeholder="Enter a fine amount"  />
@@ -832,7 +839,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" id="closeNewCall"><span aria-hidden="true">×</span>
                   </button>
-            <h4 class="modal-title" id="myModalLabel">Warning Creator</h4>
+            <h4 class="modal-title" id="myModalLabel">Intelligence Submission</h4>
           </div>
           <!-- ./ modal-header -->
           <div class="modal-body">
@@ -848,7 +855,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 1</label>
+                <label class="col-lg-2 control-label">Intelligence Information</label>
                 <div class="col-lg-10">
 					<input type="text" class="form-control" name="warning_name_1" id="warning_name_1" placeholder="Enter a warning" required />
                 </div>
@@ -856,30 +863,37 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
 			  <p>Optional</p>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 2</label>
+                <label class="col-lg-2 control-label">Source of Intelligence</label>
                 <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_2" id="warning_name_2" placeholder="Enter a warning"  />
+					<select class="form-control" name="warning_name_2" id="warning_name_2">
+						<option value="police">Police</option>
+						<option value="isr">Public/ISR</option>
+						<option value="other_agency">Other Agency</option>
+					</select>
                 </div>
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 3</label>
+                <label class="col-lg-2 control-label">Confidence</label>
                 <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_3" id="warning_name_3" placeholder="Enter a warning"  />
+					<select class="form-control" name="warning_name_3" id="warning_name_3">
+						<option value="reliable">Reliable</option>
+						<option value="untested">Untested</option>
+						<option value="not_reliable">Not reliable</option>
+					</select>
                 </div>
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 4</label>
+                <label class="col-lg-2 control-label">Intelligence Assessment</label>
                 <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_4" id="warning_name_4" placeholder="Enter a warning"  />
-                </div>
-                <!-- ./ col-sm-9 -->
-              </div>
-              <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 5</label>
-                <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_5" id="warning_name_5" placeholder="Enter a warning"  />
+					<select class="form-control" name="warning_name_4" id="warning_name_4">
+						<option value="directly">Known directly to the source</option>
+						<option value="indirectly_corroborated">Known indirectly to the source but corroborated</option>
+						<option value="indirectly">Known indirectly to the source</option>
+						<option value="not_known">Not known</option>
+						<option value="suspected_false">Suspected to be false</option>
+					</select>
                 </div>
                 <!-- ./ col-sm-9 -->
               </div>
@@ -995,7 +1009,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" id="closeNewCall"><span aria-hidden="true">×</span>
                   </button>
-            <h4 class="modal-title" id="myModalLabel">Warning Creator</h4>
+            <h4 class="modal-title" id="myModalLabel">Intelligence Creator</h4>
           </div>
           <!-- ./ modal-header -->
           <div class="modal-body">
@@ -1011,7 +1025,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 1</label>
+                <label class="col-lg-2 control-label">Intelligence Information</label>
                 <div class="col-lg-10">
 					<input type="text" class="form-control" name="warning_name_1" id="warning_name_1" placeholder="Enter a warning" required />
                 </div>
@@ -1019,30 +1033,37 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
 			  <p>Optional</p>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 2</label>
+                <label class="col-lg-2 control-label">Source of Intelligence</label>
                 <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_2" id="warning_name_2" placeholder="Enter a warning"  />
+					<select class="form-control" name="warning_name_2" id="warning_name_2">
+						<option value="police">Police</option>
+						<option value="isr">Public/ISR</option>
+						<option value="other_agency">Other Agency</option>
+					</select>
                 </div>
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 3</label>
+                <label class="col-lg-2 control-label">Confidence</label>
                 <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_3" id="warning_name_3" placeholder="Enter a warning"  />
+					<select class="form-control" name="warning_name_3" id="warning_name_3">
+						<option value="reliable">Reliable</option>
+						<option value="untested">Untested</option>
+						<option value="not_reliable">Not reliable</option>
+					</select>
                 </div>
                 <!-- ./ col-sm-9 -->
               </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 4</label>
+                <label class="col-lg-2 control-label">Intelligence Assessment</label>
                 <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_4" id="warning_name_4" placeholder="Enter a warning"  />
-                </div>
-                <!-- ./ col-sm-9 -->
-              </div>
-              <div class="form-group row">
-                <label class="col-lg-2 control-label">Warning Name 5</label>
-                <div class="col-lg-10">
-					<input type="text" class="form-control" name="warning_name_5" id="warning_name_5" placeholder="Enter a warning"  />
+					<select class="form-control" name="warning_name_4" id="warning_name_4">
+						<option value="directly">Known directly to the source</option>
+						<option value="indirectly_corroborated">Known indirectly to the source but corroborated</option>
+						<option value="indirectly">Known indirectly to the source</option>
+						<option value="not_known">Not known</option>
+						<option value="suspected_false">Suspected to be false</option>
+					</select>
                 </div>
                 <!-- ./ col-sm-9 -->
               </div>

@@ -133,7 +133,7 @@ include("./actions/profileActions.php");
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>CAD User Profile</h3>
+                <h3>OIS User Profile</h3>
               </div>
               <!-- ./ title_left -->
             </div>
@@ -213,7 +213,7 @@ include("./actions/profileActions.php");
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            <?php echo COMMUNITY_NAME;?> CAD System
+            <?php echo COMMUNITY_NAME;?> Officer Information System
           </div>
           <div class="clearfix"></div>
         </footer>
