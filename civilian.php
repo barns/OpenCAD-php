@@ -109,7 +109,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                            </li>
                            <?php
 						   if (CIV_WARRANT === true) { ?> <li>
-                              <a><i class="fa fa-warning"></i> Warrants <span class="fa fa-chevron-down"></span></a>
+                              <a><i class="fa fa-warning"></i> Outstanding Warrants <span class="fa fa-chevron-down"></span></a>
                               <ul class="nav child_menu">
                                  <li><a type="button" data-toggle="modal" data-target="#createWarrant" > Create Warrants</a></li>
                                  <li><a type="button" data-toggle="modal" data-target="#viewWarrant" > View Warrants</a></li>
@@ -267,7 +267,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                      <div class="col-md-6 col-sm-6 col-xs-6">
                         <div class="x_panel" id="911_panel">
                            <div class="x_title">
-                              <h2>New 911 Call</h2>
+                              <h2>New 999 Call</h2>
                               <ul class="nav navbar-right panel_toolbox">
                                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                  </li>
@@ -325,7 +325,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
             <!-- footer content -->
             <footer>
                <div class="pull-right">
-                  <?php echo COMMUNITY_NAME;?> CAD System | <?php pageLoadTime(); ?>
+                  <?php echo COMMUNITY_NAME;?> Officer Information System | <?php pageLoadTime(); ?>
                </div>
                <div class="clearfix"></div>
             </footer>
@@ -361,55 +361,52 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <div class="col-lg-10">
                   <select class="form-control selectpicker" name="warrant_name_sel" id="warrant_name_sel" data-live-search="true" title="Select a Warrant">
                     <optgroup label="Violent Warrants (60 day expiry)">
-                      <option value="1st Degree Murder">1st Degree Murder</option>
-                      <option value="2nd Degree Murder">2nd Degree Murder</option>
-                      <option value="3rd Degree Murder">3rd Degree Murder</option>
+                      <option value="3rd Degree Murder">Murder</option>
                       <option value="Attempted Murder">Attempted Murder</option>
                       <option value="Kidnapping">Kidnapping</option>
                       <option value="Attempted Kidnapping">Attempted Kidnapping</option>
-                      <option value="Hostage Taking">Hostage Taking</option>
-                      <option value="Bank/Fed Robbery">Bank/Fed Robbery</option>
+                      <option value="Hostage Taking">False Imprisonment</option>
+                      <option value="Bank/Fed Robbery">Armed Robbery</option>
                       <option value="Terroristic Activity">Terroristic Activity</option>
                       <option value="Terroristic Threats">Terroristic Threats</option>
-                      <option value="JailBreak">JailBreak</option>
+                      <option value="JailBreak">Escape from Custody</option>
                       <option value="Robbery">Robbery</option>
-                      <option value="Grand Theft Auto">Grand Theft Auto</option>
+                      <option value="Grand Theft Auto">Theft of Motor Vehicle</option>
+					  <option value="Grand Theft Auto">Taking without Owners Consent</option>
                       <option value="Burglary">Burglary</option>
-                      <option value="Threatening an Official">Threatening an Official</option>
+                      <option value="Threatening an Official">Threatening to Kill</option>
                       <option value="Sexual Assault">Sexual Assault</option>
                       <option value="Hate Crime">Hate Crime</option>
-                      <option value="Assault">Assault</option>
-                      <option value="Conspiracy">Conspiracy</option>
-                      <option value="Drug Trafficking">Drug Trafficking</option>
-                      <option value="Evasion/Fleeing/Eluding">Evasion/Fleeing/Eluding</option>
-                      <option value="Felony Evading">Felony Evading</option>
-                      <option value="Resisting Arrest">Resisting Arrest</option>
-                      <option value="Firearm in City Limits">Firearm in City Limits</option>
-                      <option value="Firearm by Felon">Firearm by Felon</option>
-                      <option value="Unlicensed Firearm">Unlicensed Firearm</option>
-                      <option value="Firearm Discharge in City Limits">Firearm Discharge in City Limits</option>
-                      <option value="Illegal Weapon">Illegal Weapon</option>
-                      <option value="Illegal Magazine">Illegal Magazine</option>
-                      <option value="Concealed Carry Rifle">Concealed Carry Rifle</option>
-                      <option value="Failure to Inform">Failure to Inform</option>
+                      <option value="Assault">Grevious Bodily Harm with Intent</option>
+                      <option value="Conspiracy">Conspiracy to Supply</option>
+                      <option value="Drug Trafficking">Possesion with Intent to Supply</option>
+                      <option value="Evasion/Fleeing/Eluding">Failing to Stop for Police</option>
+                      <option value="Resisting Arrest">Assault with intent to resist arrest</option>
+                      <option value="Firearm in City Limits">Possesion of a Firearm</option>
+                      <option value="Firearm by Felon">Sales of Firearms</option>
+                      <option value="Unlicensed Firearm">Manufacturing of Firearms</option>
+                      <option value="Firearm Discharge in City Limits">Possesion of Firearms with intent to cause fear</option>
+                      <option value="Illegal Weapon">Possesion of an Offensive Weapon</option>
+                      <option value="Illegal Magazine">Possesion of a Bladed Article</option>
+                      <option value="Failure to Inform">Failure to Appear for Bail/Court Indictable</option>
                     </optgroup>
                     <optgroup label="Non-Violent Warrants (30 day expiry)">
-                      <option value="FTA: Lewd Conduct">FTA: Lewd Conduct</option>
-                      <option value="FTA: DUI/DWI">FTA: DUI/DWI</option>
-                      <option value="FTA: Fraud">FTA: Fraud</option>
-                      <option value="FTA: Hit and Run">FTA: Hit and Run</option>
-                      <option value="FTA: Speeding">FTA: Speeding</option>
-                      <option value="FTA: Reckless Driving">FTA: Reckless Driving</option>
-                      <option value="FTA: Obstruction of Justice">FTA: Obstruction of Justice</option>
-                      <option value="FTA: Verbal Abuse">FTA: Verbal Abuse</option>
-                      <option value="FTA: Bribery">FTA: Bribery</option>
-                      <option value="FTA: Disorderly Conduct">FTA: Disorderly Conduct</option>
-                      <option value="FTA: Drug Posession">FTA: Drug Posession</option>
-                      <option value="FTA: Trespassing">FTA: Trespassing</option>
-                      <option value="FTA: Excessive Noise">FTA: Excessive Noise</option>
-                      <option value="FTA: Failure to Identify">FTA: Failure to Identify</option>
-                      <option value="FTA: Stalking">FTA: Stalking</option>
-                      <option value="FTA: Public Intoxication">FTA: Public Intoxication</option>
+                      <option value="FTA: Lewd Conduct">Common Assault</option>
+                      <option value="FTA: DUI/DWI">Actual Bodily Harm</option>
+                      <option value="FTA: Fraud">Section 5 Public Order</option>
+                      <option value="FTA: Hit and Run">Section 4 Public Order</option>
+                      <option value="FTA: Speeding">Section 4A Public Order</option>
+                      <option value="FTA: Reckless Driving">Failing to stop at an accident</option>
+                      <option value="FTA: Obstruction of Justice">Dangerous Driving</option>
+                      <option value="FTA: Verbal Abuse">Careless Driving</option>
+                      <option value="FTA: Bribery">Driving whilst over the prescribed limit</option>
+                      <option value="FTA: Disorderly Conduct">Drunk and Disorderly</option>
+                      <option value="FTA: Drug Posession">Breach of the Peace</option>
+                      <option value="FTA: Trespassing">Criminal Trespassing</option>
+                      <option value="FTA: Excessive Noise">Cannabis Warning</option>
+                      <option value="FTA: Failure to Identify">FTA: Failure to Appear Summary</option>
+                      <option value="FTA: Stalking">Failure to pay outstanding fines</option>
+                      <option value="FTA: Public Intoxication">Driving whilst disqualified</option>
                     </optgroup>
                   </select>
                 </div>
@@ -417,7 +414,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Issuing Agency</label>
+                <label class="col-lg-2 control-label">Issuing Force</label>
                 <div class="col-lg-10">
                   <select class="form-control selectpicker" name="issuing_agency" id="issuing_agency" data-live-search="true" required>
                     <option> </option>
@@ -456,7 +453,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel" id="citation_panel">
                   <div class="x_title">
-                    <h2>NCIC Warrants</h2>
+                    <h2>Outstanding Warrants</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -547,6 +544,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
 						<option val="hispanic">Hispanic</option>
 						<option val="hawaiian">Native Hawaiian or Other Pacific Islander</option>
 						<option val="white">White</option>
+						<option val="white">Unknown</option>
 					</select>
                 </div>
                 <!-- ./ col-sm-9 -->
@@ -556,9 +554,9 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <label class="col-lg-2 control-label">License Status</label>
                   <div class="col-lg-10">
                     <select name="civDL" class="form-control selectpicker" id="civDL" title="Select a license status" required>
-                <option value="Valid"> Valid </option>
-                <option value="Suspended"> Suspended </option>
-                <option value="Expired"> Expired </option>
+                <option value="Valid"> Substansive </option>
+                <option value="Suspended"> Provisional </option>
+                <option value="Expired"> Disqualified </option>
                 </select>
                 </div>
                 <!-- ./ col-sm-9 -->
@@ -603,11 +601,11 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
 
           </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Weapon Status</label>
+                <label class="col-lg-2 control-label">Weapon Markers</label>
                 <div class="col-lg-10">
 					<select name="civWepStat" class="form-control selectpicker" id="civWepStat" title="Select a status" required>
-						<option val="Obtained">Obtained</option>
-						<option val="Unobtained">Unobtained</option>
+						<option val="Obtained">No</option>
+						<option val="Unobtained">Yes</option>
 						</select>
                 <!-- ./ col-sm-9 -->
               </div>
@@ -709,9 +707,9 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <label class="col-lg-2 control-label">License Status</label>
                   <div class="col-lg-10">
                     <select name="civDL" class="form-control selectpicker civDL_picker" id="civDL" title="Select a license status" required>
-                <option value="Valid"> Valid </option>
-                <option value="Suspended"> Suspended </option>
-                <option value="Expired"> Expired </option>
+                <option value="Valid"> Substansive </option>
+                <option value="Suspended"> Provisional </option>
+                <option value="Expired"> Disqualified </option>
                 </select>
                 </div>
                 <!-- ./ col-sm-9 -->
@@ -734,6 +732,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
           <option val="red">Red or Auburn</option>
           <option val="sdy">Sandy</option>
           <option val="whi">White</option>
+		  <option val="white">Unknown</option>
           </select>
                 </div>
                 <!-- ./ col-sm-9 -->
@@ -756,11 +755,11 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
 
           </div>
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Weapon Status</label>
+                <label class="col-lg-2 control-label">Weapon Markers</label>
                 <div class="col-lg-10">
 					<select name="civWepStat" class="form-control civWepStat_picker" id="civWepStat" title="Select a status" required>
-						<option val="Obtained">Obtained</option>
-						<option val="Unobtained">Unobtained</option>
+						<option val="Obtained">No</option>
+						<option val="Unobtained">Yes</option>
 						</select>
                 <!-- ./ col-sm-9 -->
               </div>
@@ -809,7 +808,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <div class="form-group row">
                 </div>
                 <div class="form-group row">
-                <label class="col-lg-2 control-label">Registered Owner</label>
+                <label class="col-lg-2 control-label">Registered Keeper</label>
                 <div class="col-lg-10">
                   <select class="form-control selectpicker" name="civilian_names" id="civilian_names" data-live-search="true" required>
                     <option> </option>
@@ -865,22 +864,23 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <div class="col-lg-10">
                 <select class="form-control" name="veh_insurance" required>
                 <option value="">  </option>
-                <option value="Valid"> Valid </option>
-                <option value="Expired"> Expired </option>
+                <option value="Valid"> Held </option>
+                <option value="Expired"> None Showing </option>
                 </select>
                 </div>
                 <!-- ./ col-sm-9 -->
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Vehicle Flags</label>
+                <label class="col-lg-2 control-label">Vehicle Markers</label>
                   <div class="col-lg-10">
                     <select class="form-control" name="flags" required>
                 <option value="">  </option>
                 <option value="None"> None </option>
                 <option value="Stolen"> Stolen </option>
-                <option value="Wanted"> Wanted </option>
-                <option value="Suspended Registration"> Suspended Registration </option>
+                <option value="Wanted"> Drugs </option>
+                <option value="Suspended Registration"> Disqualified Driver </option>
+				<option value="Wanted"> Weapons </option>
                 </select>
                 </div>
                 <!-- ./ col-sm-9 -->
@@ -895,61 +895,13 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Vehicle's Registered State</label>
+                <label class="col-lg-2 control-label">Vehicle's Registered </label>
                 <div class="col-lg-10">
                   <select class="form-control" name="veh_reg_state" required>
 				  <option value"">  </option>
-				  <option value"Alabama"> Alabama </option>
-				  <option value"Alaska"> Alaska </option>
-				  <option value"Arizona"> Arizona </option>
-				  <option value"Arkansas"> Arkansas </option>
-				  <option value"California"> California </option>
-				  <option value"Colorado"> Colorado </option>
-				  <option value"Connecticut"> Connecticut </option>
-				  <option value"Delaware"> Delaware </option>
-				  <option value"Florida"> Florida </option>
-				  <option value"Georgia"> Georgia </option>
-				  <option value"Hawaii"> Hawaii </option>
-				  <option value"Idaho"> Idaho </option>
-				  <option value"Illinois"> Illinois </option>
-				  <option value"Indiana"> Indiana </option>
-				  <option value"Iowa"> Iowa </option>
-				  <option value"Kansas"> Kansas </option>
-				  <option value"Kentucky"> Kentucky </option>
-				  <option value"Louisiana"> Louisiana </option>
-				  <option value"Maine"> Maine </option>
-				  <option value"Maryland"> Maryland </option>
-				  <option value"Massachusetts"> Massachusetts </option>
-				  <option value"Michigan"> Michigan </option>
-				  <option value"Minnesota"> Minnesota </option>
-				  <option value"Mississippi"> Mississippi </option>
-				  <option value"Missouri"> Missouri </option>
-				  <option value"Montana"> Montana </option>
-				  <option value"Nebraska"> Nebraska </option>
-				  <option value"Nevada"> Nevada </option>
-				  <option value"New Hampshire"> New Hampshire </option>
-				  <option value"New Jersey"> New Jersey </option>
-				  <option value"New Mexico"> New Mexico </option>
-				  <option value"New York"> New York </option>
-				  <option value"North Carolina"> North Carolina </option>
-				  <option value"North Dakota"> North Dakota </option>
-				  <option value"Ohio"> Ohio </option>
-				  <option value"Oklahoma"> Oklahoma </option>
-				  <option value"Oregon"> Oregon </option>
-				  <option value"Pennsylvania"> Pennsylvania </option>
-				  <option value"Rhode Island"> Rhode Island </option>
-				  <option value"San Andreas"> San Andreas </option>
-				  <option value"South Carolina"> South Carolina </option>
-				  <option value"South Dakota"> South Dakota </option>
-				  <option value"Tennessee"> Tennessee </option>
-				  <option value"Texas"> Texas </option>
-				  <option value"Utah"> Utah </option>
-				  <option value"Vermont"> Vermont </option>
-				  <option value"Virginia"> Virginia </option>
-				  <option value"Washington"> Washington </option>
-				  <option value"West Virginia"> West Virginia </option>
-				  <option value"Wisconsin"> Wisconsin </option>
-				  <option value"Wyoming"> Wyoming </option>
+				  <option value"Alabama"> United Kingdom </option>
+				  <option value"Alaska"> EU </option>
+				  <option value"Arizona"> Non-EU </option>
 				  </select>
 				  </div>
                 <!-- ./ col-sm-9 -->
@@ -986,7 +938,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <div class="form-group row">
                 </div>
                 <div class="form-group row">
-                <label class="col-lg-2 control-label">Registered Owner</label>
+                <label class="col-lg-2 control-label">Registered Keeper</label>
                 <div class="col-lg-10">
                   <select class="form-control selectpicker civilian_names_picker" name="civilian_names" id="civilian_names" data-live-search="true" required>
                     <option> </option>
@@ -1042,8 +994,8 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <div class="col-lg-10">
                 <select class="form-control veh_insurance_option" name="veh_insurance" id="insurance_edit" required>
                 <option value="">  </option>
-                <option value="VALID"> Valid </option>
-                <option value="EXPIRED"> Expired </option>
+                <option value="VALID"> Held </option>
+                <option value="EXPIRED"> None Showing</option>
                 </select>
                 </div>
                 <!-- ./ col-sm-9 -->
@@ -1054,10 +1006,11 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                   <div class="col-lg-10">
                     <select class="form-control flags_option" name="flags" required>
                 <option value="">  </option>
-                <option value="NONE"> None </option>
-                <option value="STOLEN"> Stolen </option>
-                <option value="WANTED"> Wanted </option>
-                <option value="SUSPENDED REGISTRATION"> Suspended Registration </option>
+                <option value="None"> None </option>
+                <option value="Stolen"> Stolen </option>
+                <option value="Wanted"> Drugs </option>
+                <option value="Suspended Registration"> Disqualified Driver </option>
+				<option value="Wanted"> Weapons </option>
                 </select>
                 </div>
                 <!-- ./ col-sm-9 -->
@@ -1072,61 +1025,13 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Vehicle's Registered State</label>
+                <label class="col-lg-2 control-label">Vehicle Registered</label>
                 <div class="col-lg-10">
                   <select class="form-control veh_reg_state_option" name="veh_reg_state" required>
           <option value"">  </option>
-				  <option value"Alabama"> Alabama </option>
-				  <option value"Alaska"> Alaska </option>
-				  <option value"Arizona"> Arizona </option>
-				  <option value"Arkansas"> Arkansas </option>
-				  <option value"California"> California </option>
-				  <option value"Colorado"> Colorado </option>
-				  <option value"Connecticut"> Connecticut </option>
-				  <option value"Delaware"> Delaware </option>
-				  <option value"Florida"> Florida </option>
-				  <option value"Georgia"> Georgia </option>
-				  <option value"Hawaii"> Hawaii </option>
-				  <option value"Idaho"> Idaho </option>
-				  <option value"Illinois"> Illinois </option>
-				  <option value"Indiana"> Indiana </option>
-				  <option value"Iowa"> Iowa </option>
-				  <option value"Kansas"> Kansas </option>
-				  <option value"Kentucky"> Kentucky </option>
-				  <option value"Louisiana"> Louisiana </option>
-				  <option value"Maine"> Maine </option>
-				  <option value"Maryland"> Maryland </option>
-				  <option value"Massachusetts"> Massachusetts </option>
-				  <option value"Michigan"> Michigan </option>
-				  <option value"Minnesota"> Minnesota </option>
-				  <option value"Mississippi"> Mississippi </option>
-				  <option value"Missouri"> Missouri </option>
-				  <option value"Montana"> Montana </option>
-				  <option value"Nebraska"> Nebraska </option>
-				  <option value"Nevada"> Nevada </option>
-				  <option value"New Hampshire"> New Hampshire </option>
-				  <option value"New Jersey"> New Jersey </option>
-				  <option value"New Mexico"> New Mexico </option>
-				  <option value"New York"> New York </option>
-				  <option value"North Carolina"> North Carolina </option>
-				  <option value"North Dakota"> North Dakota </option>
-				  <option value"Ohio"> Ohio </option>
-				  <option value"Oklahoma"> Oklahoma </option>
-				  <option value"Oregon"> Oregon </option>
-				  <option value"Pennsylvania"> Pennsylvania </option>
-				  <option value"Rhode Island"> Rhode Island </option>
-				  <option value"San Andreas"> San Andreas </option>
-				  <option value"South Carolina"> South Carolina </option>
-				  <option value"South Dakota"> South Dakota </option>
-				  <option value"Tennessee"> Tennessee </option>
-				  <option value"Texas"> Texas </option>
-				  <option value"Utah"> Utah </option>
-				  <option value"Vermont"> Vermont </option>
-				  <option value"Virginia"> Virginia </option>
-				  <option value"Washington"> Washington </option>
-				  <option value"West Virginia"> West Virginia </option>
-				  <option value"Wisconsin"> Wisconsin </option>
-				  <option value"Wyoming"> Wyoming </option>
+				  <option value"Alabama"> United Kingdom </option>
+				  <option value"Alaska"> EU </option>
+				  <option value"Arizona"> Non-EU </option>
           </select>
           </div>
                 <!-- ./ col-sm-9 -->
@@ -1164,7 +1069,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                 <div class="form-group row">
                 </div>
                 <div class="form-group row">
-                <label class="col-lg-2 control-label">Registered Owner</label>
+                <label class="col-lg-2 control-label">Registered Keeper</label>
                 <div class="col-lg-10">
                   <select class="form-control selectpicker" name="civilian_names" id="civilian_names" data-live-search="true" required>
                     <option> </option>
@@ -1175,7 +1080,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               </div>
               <!-- ./ form-group -->
               <div class="form-group row">
-                <label class="col-lg-2 control-label">Weapon Type-Name</label>
+                <label class="col-lg-2 control-label">Marker Details</label>
                 <div class="col-lg-10">
                   <select class="form-control selectpicker" name="weapon_all" id="weapon_all" data-live-search="true" required>
                     <option> </option>
@@ -1206,18 +1111,19 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
                   </button>
-                  <h4 class="modal-title" id="myModalLabel">How to Submit a 911 Call</h4>
+                  <h4 class="modal-title" id="myModalLabel">How to Submit a 999 Call</h4>
                </div>
                <!-- ./ modal-header -->
                <div class="modal-body">
                   <span>
-                     <p><b>Where, What, Who, When, How, Why if available are the primary things to provide to a 911 dispatcher.</b></p>
+                     <p><b>Where, What, Who, When, How, Why if available are the primary things to provide to a 999 dispatcher.</b></p>
                      <p>Some things to consider reporting:</p>
                      <p>
                      <ul>
                         <li>Your name</li>
                         <li>Address responders need to go to</li>
-                        <li>Any weapons?</li>
+                        <li>Any weapons involved</li>
+						<li>Gender of suspect(s) or victim(s)</li>
                         <li>Age of suspect(s) or victim(s)</li>
                         <li>Height and Weight of suspect(s)</li>
                         <li>Clothing description of suspect(s)</li>
