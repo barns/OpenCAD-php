@@ -172,7 +172,7 @@ mysqli_close($link);
          <div class="container-fluid">
             <div class="row">
                <div class="col-lg-12">
-                  <h1 class="page-header animate fadeInLeft delay2" style="text-align:center;">Hello! What would you like to do today?</h1>
+                  <h1 class="page-header animate fadeInLeft delay2" style="text-align:center;">Welcome to the Officer Information System, please book on duty.</h1>
                </div>
                <!-- ./ col-lg-12 -->
             </div>

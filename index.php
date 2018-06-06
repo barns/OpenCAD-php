@@ -127,12 +127,12 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                         <label>Division (Can choose more than one via Ctrl + Click)</label>
                         <select class="form-control" id="division" name="division[]" multiple="multiple" size="6" required>
                            <option value="civilian">Civilian</option>
-                           <option value="communications">Communications (Dispatch)</option>
-                           <option value="ems">EMS</option>
-                           <option value="fire">Fire</option>
-                           <option value="highway" <?php if($testing){echo "selected=\"selected\"";}?>>Highway Patrol</option>
-                           <option value="police">Police</option>
-                           <option value="sheriff">Sheriff</option>
+                           <option value="communications">Force Control Room</option>
+                           <option value="ems">Ambulance</option>
+                           <option value="fire">Fire and Rescue Service</option>
+                           <option value="highway" <?php if($testing){echo "selected=\"selected\"";}?>>Resource Managment</option>
+                           <option value="police">City of Sanderton Police</option>
+                           <option value="sheriff">Blaineshire Constabulary</option>
                         </select>
                      </div>
                      <div class="form-group">
@@ -155,7 +155,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                         <div class="clearfix"></div>
                         <br />
                         <div>
-                           <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME ?> CAD System</h1>
+                           <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME ?> Officer Information System </h1>
                         </div>
                      </div>
                   </form>
@@ -196,7 +196,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
                         <div class="clearfix"></div>
                         <br />
                         <div>
-                           <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME ?> CAD System</h1>
+                           <h1><i class="fa fa-tachometer"></i> <?php echo COMMUNITY_NAME ?> Officer Information System</h1>
                         </div>
                      </div>
                   </form>
@@ -206,7 +206,7 @@ This program comes with ABSOLUTELY NO WARRANTY; Use at your own risk.
               <div id="civ" class="animate form civilian_form">
                     <?php echo $registerError, $registerSuccess;?>
                        <p>Stop trying to backdoor into OpenCAD
-                          This has been logged. </p>
+                          This has been logged. We are watching </p>
                        <div class="clearfix"></div>
                        <div class="separator">
                           <p class="change_link">Already a member?
